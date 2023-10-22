@@ -1,7 +1,6 @@
 <?php
 
-@ini_set('display_errors', 'on');
-require_once("../../../config.php");
+require_once("config.php");
 
 $mysqli = mysqli_connect($mysqli_host, $mysqli_id, $mysqli_pass, $mysqli_db);
 
@@ -36,5 +35,3 @@ else
 
 mysqli_close($mysqli);
 return TRUE;
-
-?>
