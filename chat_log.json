@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "username": "Test",
+        "message": "This is a test",
+        "date": "2023-10-24 00:38:50"
+    },
+    {
+        "id": 2,
+        "username": "Test",
+        "message": "This is also a test",
+        "date": "2023-10-24 00:39:52"
+    }
+]

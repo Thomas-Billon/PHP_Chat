@@ -1,26 +1,24 @@
 <?php
 
-$mysqli = mysqli_connect($mysqli_host, $mysqli_id, $mysqli_pass, $mysqli_db);
+require_once("chat.php");
 
-if (mysqli_connect_errno())
+
+if(!isset($_GET["id"]))
 {
-	echo "Failed to connect to MySQL: ". mysqli_connect_error();
-	return FALSE;
+    $result = array("response" => false);
+    echo json_encode($result);
+    return;
 }
 
-$sql = "SELECT * FROM (SELECT * FROM chat_ajax ORDER BY id DESC LIMIT 10) AS t ORDER BY id ASC";
+$id = intval($_GET["id"]);
 
-if (!$request = mysqli_query($mysqli, $sql))
+$chat_log = Chat::get_chat_log_after_id($id);
+
+foreach ($chat_log as $chat)
 {
-	echo "An error occured :(<br />". mysqli_error($mysqli);
-	return FALSE;
+    $chat->sanitize_chat();
 }
 
-while($data = $request->fetch_assoc())
-{
-	echo "<p id=\"". $data['id'] ."\">". $data['login'] ." : ". $data['message'] ."</p>";
-}
-$request->free();
-
-mysqli_close($mysqli);
-return TRUE;
+$result = array("response" => true, "chatLog" => $chat_log);
+echo json_encode($result);
+return;
