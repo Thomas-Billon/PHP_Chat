@@ -1,4 +1,4 @@
-# PHP AJAX Chat
+# PHP Chat
 
 Simple chat using PHP, AJAX, JQuery & Bootstrap.
 
