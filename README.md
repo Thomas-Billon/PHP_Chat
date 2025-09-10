@@ -10,7 +10,12 @@ Simple chat with client-side polling and temporary JSON log storage.
 
 ## Requirements
 
-* Needs to be run on a server (Apache, Nginx, ...) or with PHP 5.4+ built-in web server to work properly
+* PHP 5.4+
+* Server (Apache, Nginx, ...)
+
+## Getting Started
+
+* Open localhost on your browser
 
 ## License Notice
 
