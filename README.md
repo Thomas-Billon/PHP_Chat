@@ -11,7 +11,7 @@ Simple chat with client-side polling and temporary JSON log storage.
 ## Requirements
 
 * PHP 5.4+
-* Server (Apache, Nginx, ...)
+* Web server (Apache, Nginx, ...)
 
 ## Getting Started
 
